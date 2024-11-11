@@ -1,0 +1,79 @@
+/* Dark background and neon theme */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #121212; /* Dark background */
+    color: #fff;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.button-item {
+    text-align: center;
+}
+
+/* Base button styling */
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #121212;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+/* Neon glow effect for each button with unique colors */
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(8px);
+    z-index: -1;
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+
+button:hover::before {
+    opacity: 1;
+}
+
+button:hover {
+    color: #000;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Unique neon colors for each button */
+.button-item:nth-child(1) button::before {
+    background: linear-gradient(45deg, #ff00ff, #ff69b4); /* Pink & Purple */
+}
+
+.button-item:nth-child(2) button::before {
+    background: linear-gradient(45deg, #00ffff, #00ff00); /* Cyan & Green */
+}
+
+.button-item:nth-child(3) button::before {
+    background: linear-gradient(45deg, #ff0000, #ffa500); /* Red & Orange */
+}
+
+/* Caption styling */
+p {
+    margin-top: 10px;
+    color: #ff69b4; /* Neon pink for captions */
+    font-size: 14px;
+}
